@@ -14,7 +14,7 @@ function NFTDropPage() {
             />
           </div>
 
-          <div>
+          <div className="space-y-2 p-5 text-center">
             <h1 className="text-4xl font-bold text-white">SLAYFEST APES</h1>
             <h2 className="text-xl text-gray-200">
               A collection of SLAYFEST APES killing it using REACT!
