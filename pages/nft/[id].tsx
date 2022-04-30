@@ -45,6 +45,9 @@ function NFTDropPage() {
         <hr className="my-2 border" />
 
         {/* {Content} */}
+        <div>
+          <img src="https://www.artnews.com/wp-content/uploads/2021/09/Apes-Collage.jpg?w=682" alt="ape nft" />
+        </div>
 
         {/* {Button} */}
       </div>
