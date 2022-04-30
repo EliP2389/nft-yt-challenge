@@ -23,7 +23,20 @@ function NFTDropPage() {
         </div>
       </div>
       {/* {right} */}
-      <div></div>
+      <div>
+        {/* {Header} */}
+        <header>
+          <h1>The SLAYFEST NFT Market Place</h1>
+
+         <button>Sign In</button>
+        </header>
+
+        {/* {Content} */}
+
+
+        {/* {Button} */}
+
+      </div>
     </div>
   )
 }
