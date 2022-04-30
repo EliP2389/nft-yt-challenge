@@ -23,19 +23,23 @@ function NFTDropPage() {
         </div>
       </div>
       {/* {right} */}
-      <div>
+      <div className='flex flex-1 flex-col p-12 lg:col-span-7'>
         {/* {Header} */}
-        <header>
-          <h1>The SLAYFEST NFT Market Place</h1>
+        <header className='flex items-center justify-between'>
+          <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
+            The {' '}
+            <span className="font-extrabold underline decoration-purple-600/50"> SLAYFEST
+            </span>{' '}
+            NFT Market Place
+          </h1>
 
-         <button>Sign In</button>
+          <button className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
+          text-white lg:px-5 lg:py-3 lg:text-base">Sign In</button>
         </header>
 
         {/* {Content} */}
 
-
         {/* {Button} */}
-
       </div>
     </div>
   )
