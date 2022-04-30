@@ -48,7 +48,7 @@ function NFTDropPage() {
         <div className="mt-10 flex flex-1 flex-col items-center 
         space-y-6 text-center lg:space-y-0 lg:justify-center">
           <img
-            className="w-80 object-cover pb-10 lg:h-40 animate-bounce"
+            className="w-80 object-cover pb-10 lg:h-40 lg:animate-bounce"
             src="https://www.artnews.com/wp-content/uploads/2021/09/Apes-Collage.jpg?w=682"
             alt="ape nft"
           />
