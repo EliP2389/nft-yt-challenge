@@ -27,7 +27,7 @@ function NFTDropPage() {
         {/* {Header} */}
         <header className="flex items-center justify-between">
           <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
-            The {' '}
+            The{' '}
             <span className="font-extrabold underline decoration-purple-600/50">
               SLAYFEST
             </span>{' '}
@@ -45,11 +45,23 @@ function NFTDropPage() {
         <hr className="my-2 border" />
 
         {/* {Content} */}
-        <div>
-          <img src="https://www.artnews.com/wp-content/uploads/2021/09/Apes-Collage.jpg?w=682" alt="ape nft" />
+        <div className="mt-10 flex flex-1 flex-col items-center 
+        space-y-6 text-center lg:space-y-0 lg:justify-center">
+          <img
+            className="w-80 object-cover pb-10 lg:h-40 animate-bounce"
+            src="https://www.artnews.com/wp-content/uploads/2021/09/Apes-Collage.jpg?w=682"
+            alt="ape nft"
+          />
+
+          <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>SLAYFEST APES | NFT Drop</h1>
+
+          <p className='pt-2 text-xl text-green-400'>13/21 NFT's claimed</p>
         </div>
 
         {/* {Button} */}
+        <button className='h-16 w-full rounded-full bg-purple-400 text-white
+        mt-10 font-bold'>
+          Mint NFT (0.01 ETH)</button>
       </div>
     </div>
   )
