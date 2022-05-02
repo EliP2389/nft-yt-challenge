@@ -1,6 +1,12 @@
 import React from 'react'
+import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 
 function NFTDropPage() {
+  // Auth
+  const connectWithMetaMask = useMetamask()
+  const address = useAddress()
+  const disconnect = useDisconnect()
+
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
       {/*left*/}
@@ -35,6 +41,7 @@ function NFTDropPage() {
           </h1>
 
           <button
+            onClick={() => connectWithMetaMask()}
             className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
           text-white lg:px-5 lg:py-3 lg:text-base"
           >
@@ -45,23 +52,30 @@ function NFTDropPage() {
         <hr className="my-2 border" />
 
         {/* {Content} */}
-        <div className="mt-10 flex flex-1 flex-col items-center 
-        space-y-6 text-center lg:space-y-0 lg:justify-center">
+        <div
+          className="mt-10 flex flex-1 flex-col items-center 
+        space-y-6 text-center lg:justify-center lg:space-y-0"
+        >
           <img
             className="w-80 object-cover pb-10 lg:h-40 lg:animate-bounce"
             src="https://www.artnews.com/wp-content/uploads/2021/09/Apes-Collage.jpg?w=682"
             alt="ape nft"
           />
 
-          <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>SLAYFEST APES | NFT Drop</h1>
+          <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold">
+            SLAYFEST APES | NFT Drop
+          </h1>
 
-          <p className='pt-2 text-xl text-green-400'>13/21 NFT's claimed</p>
+          <p className="pt-2 text-xl text-green-400">13/21 NFT's claimed</p>
         </div>
 
         {/* {Button} */}
-        <button className='h-16 w-full rounded-full bg-purple-400 text-white
-        mt-10 font-bold'>
-          Mint NFT (0.01 ETH)</button>
+        <button
+          className="mt-10 h-16 w-full rounded-full bg-purple-400
+        font-bold text-white"
+        >
+          Mint NFT (0.01 ETH)
+        </button>
       </div>
     </div>
   )
