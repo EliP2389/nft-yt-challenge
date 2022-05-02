@@ -6,7 +6,7 @@ function NFTDropPage() {
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
   const disconnect = useDisconnect()
- 
+
   console.log(address)
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
@@ -42,7 +42,7 @@ function NFTDropPage() {
           </h1>
 
           <button
-            onClick={() => connectWithMetaMask()}
+            onClick={() => (address ? disconnect() : connectWithMetaMask())}
             className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
           text-white lg:px-5 lg:py-3 lg:text-base"
           >
@@ -51,6 +51,12 @@ function NFTDropPage() {
         </header>
 
         <hr className="my-2 border" />
+        {address && (
+          <p className="animate-pulse text-center text-sm text-purple-400">
+            You're logged in with wallet {address.substring(0, 5)}...
+            {address.substring(address.length - 5)}
+          </p>
+        )}
 
         {/* {Content} */}
         <div
