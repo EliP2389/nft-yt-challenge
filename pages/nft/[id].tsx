@@ -6,7 +6,8 @@ function NFTDropPage() {
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
   const disconnect = useDisconnect()
-
+ 
+  console.log(address)
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
       {/*left*/}
@@ -45,7 +46,7 @@ function NFTDropPage() {
             className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
           text-white lg:px-5 lg:py-3 lg:text-base"
           >
-            Sign In
+            {address ? 'Sign Out' : 'Sign In'}
           </button>
         </header>
 
