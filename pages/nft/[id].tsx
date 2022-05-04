@@ -52,7 +52,7 @@ function NFTDropPage() {
           <button
             onClick={() => (address ? disconnect() : connectWithMetaMask())}
             className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
-          text-white lg:px-5 lg:py-3 lg:text-base"
+          text-white shadow-sm shadow-indigo-600/50 lg:px-5 lg:py-3 lg:text-base"
           >
             {address ? 'Connected' : 'Connect'}
           </button>
@@ -87,7 +87,7 @@ function NFTDropPage() {
         {/* {Button} */}
         <button
           className="mt-10 h-16 w-full rounded-full bg-purple-400
-        font-bold text-white "
+        font-bold shadow-sm shadow-indigo-600/50 text-white "
         >
           Mint NFT (0.01 ETH)
         </button>
