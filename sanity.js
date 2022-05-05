@@ -9,3 +9,7 @@ export const config = {
 }
 
 export const sanityClient = createClient(config)
+
+// set up a helper function for generating Image URLs with only the asset referenc data in your documents.
+// Read more: https://www.sanity.io/docs/image-url
+export const urlFor = (source) => createImageUrlBuilder(config).image(source)
