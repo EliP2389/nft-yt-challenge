@@ -13,7 +13,7 @@ function NFTDropPage() {
       {/*left*/}
       <div className="bg-gradient-to-br from-yellow-500 to-purple-500 lg:col-span-3">
         <div className="flex flex-col items-center justify-center py-2 lg:min-h-screen">
-          <div className="rounded-xl bg-gradient-to-br from-rose-500 to-blue-400 p-2 shadow-xl">
+          <div className="rounded-xl bg-gradient-to-br from-rose-500 to-blue-400 p-2 shadow-2xl">
             <iframe
               src="https://giphy.com/embed/5hvKNH3QAA4jPaMfcG"
               width="250"
@@ -46,7 +46,7 @@ function NFTDropPage() {
           <button
             onClick={() => (address ? disconnect() : connectWithMetaMask())}
             className="rounded-full bg-purple-400 px-4 py-2 text-xs font-bold 
-          text-white shadow-sm shadow-indigo-600/50 lg:px-5 lg:py-3 lg:text-base"
+          text-white shadow-md shadow-purple-400/70 lg:px-5 lg:py-3 lg:text-base"
           >
             {address ? 'Connected' : 'Connect'}
           </button>
@@ -81,7 +81,7 @@ function NFTDropPage() {
         {/* {Button} */}
         <button
           className="mt-10 h-16 w-full rounded-full bg-purple-400
-        font-bold text-white shadow-sm shadow-indigo-600/50 "
+        font-bold text-white shadow-md shadow-purple-400/70 "
         >
           Mint NFT (0.01 ETH)
         </button>
