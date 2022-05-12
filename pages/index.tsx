@@ -26,7 +26,8 @@ const Home = ({ collections }: Props) => {
       <main>
         <div>
           {collections.map((collection) => (
-            <div>
+            <div className="flex flex-col items-center cursor-pointer
+            transition-all duration-200 hover:scale-105">
               <img
                 className="h-96 w-60 rounded-2xl object-cover"
                 src={urlFor(collection.mainImage).url()}
@@ -34,8 +35,9 @@ const Home = ({ collections }: Props) => {
               />
 
               <div>
-                <h2>{collection.title}</h2>
-                <p>{collection.description}</p>
+                <h2 className='text-3xl'>{collection.title}</h2>
+                <p className='mt-2 text-sm text-gray-400'>
+                  {collection.description}</p>
               </div>
             </div>
           ))}
