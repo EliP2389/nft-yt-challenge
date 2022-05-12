@@ -16,7 +16,7 @@ const Home = ({ collections }: Props) => {
         <title>NFT DROP</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
+      <h1 className="mb-10 text-4xl font-extralight">
         The{' '}
         <span className="font-extrabold underline decoration-purple-600/50">
           SLAYFEST
@@ -24,7 +24,7 @@ const Home = ({ collections }: Props) => {
         NFT Market Place
       </h1>
 
-      <main className='bg-slate-100 p-10 shadow-xl shadow-purple-500/40'>
+      <main className='bg-slate-100 p-10 shadow-xl shadow-purple-500/50 shadow-animate-pulse'>
         <div className='grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
           {collections.map((collection) => (
             <div className="flex flex-col items-center cursor-pointer
@@ -35,7 +35,7 @@ const Home = ({ collections }: Props) => {
                 alt="main image"
               />
 
-              <div>
+              <div className="p-5">
                 <h2 className='text-3xl'>{collection.title}</h2>
                 <p className='mt-2 text-sm text-gray-400'>
                   {collection.description}</p>
