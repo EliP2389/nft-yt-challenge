@@ -22,6 +22,17 @@ const Home = ({ collections }: Props) => {
             </span>{' '}
             NFT Market Place
           </h1>
+
+          <main>
+            <div>
+              {collections.map(collection => (
+                <div>
+                  <img src={urlFor(collection.mainImage).url()} alt="main image" />
+
+                </div>
+              ))}
+            </div>
+          </main>
     </div>
   )
 }
