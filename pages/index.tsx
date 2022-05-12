@@ -3,7 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { sanityClient, urlFor } from '../sanity'
 
-const Home = ({ collections }) => {
+interface Props {
+  collections: Collection[]
+}
+
+const Home = ({ collections }: Props) => {
   return (
     <div className="">
       <Head>
