@@ -16,23 +16,25 @@ const Home = ({ collections }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
-            The{' '}
-            <span className="font-extrabold underline decoration-purple-600/50">
-              SLAYFEST
-            </span>{' '}
-            NFT Market Place
-          </h1>
+        The{' '}
+        <span className="font-extrabold underline decoration-purple-600/50">
+          SLAYFEST
+        </span>{' '}
+        NFT Market Place
+      </h1>
 
-          <main>
+      <main>
+        <div>
+          {collections.map((collection) => (
             <div>
-              {collections.map(collection => (
-                <div>
-                  <img src={urlFor(collection.mainImage).url()} alt="main image" />
-
-                </div>
-              ))}
+              <img 
+              className="h-96 w-60 rounded-2xl object-cover"
+              src={urlFor(collection.mainImage).url()} 
+              alt="main image" />
             </div>
-          </main>
+          ))}
+        </div>
+      </main>
     </div>
   )
 }
@@ -65,11 +67,11 @@ creator-> {
 },
 }`
 
-const collections = await sanityClient.fetch(query)
+  const collections = await sanityClient.fetch(query)
 
-return {
-  props: {
-    collections
+  return {
+    props: {
+      collections,
+    },
   }
-}
 }
