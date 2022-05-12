@@ -23,8 +23,8 @@ const Home = ({ collections }: Props) => {
         NFT Market Place
       </h1>
 
-      <main>
-        <div>
+      <main className='bg-slate-100 p-10 shadow-xl shadow-purple-500/50'>
+        <div className='grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
           {collections.map((collection) => (
             <div className="flex flex-col items-center cursor-pointer
             transition-all duration-200 hover:scale-105">
