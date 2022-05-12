@@ -27,10 +27,16 @@ const Home = ({ collections }: Props) => {
         <div>
           {collections.map((collection) => (
             <div>
-              <img 
-              className="h-96 w-60 rounded-2xl object-cover"
-              src={urlFor(collection.mainImage).url()} 
-              alt="main image" />
+              <img
+                className="h-96 w-60 rounded-2xl object-cover"
+                src={urlFor(collection.mainImage).url()}
+                alt="main image"
+              />
+
+              <div>
+                <h2>{collection.title}</h2>
+                <p>{collection.description}</p>
+              </div>
             </div>
           ))}
         </div>
