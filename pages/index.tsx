@@ -10,7 +10,8 @@ interface Props {
 
 const Home = ({ collections }: Props) => {
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto flex min-h-screen flex-col 
+    py-20 px-10 2xl:px-0">
       <Head>
         <title>NFT DROP</title>
         <link rel="icon" href="/favicon.ico" />
@@ -23,7 +24,7 @@ const Home = ({ collections }: Props) => {
         NFT Market Place
       </h1>
 
-      <main className='bg-slate-100 p-10 shadow-xl shadow-purple-500/50'>
+      <main className='bg-slate-100 p-10 shadow-xl shadow-purple-500/40'>
         <div className='grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
           {collections.map((collection) => (
             <div className="flex flex-col items-center cursor-pointer
