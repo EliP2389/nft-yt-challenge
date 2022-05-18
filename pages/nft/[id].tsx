@@ -1,7 +1,14 @@
 import React from 'react'
 import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
+import { GetServerSideProps } from 'next'
+import { sanityClient } from '../../sanity'
+import { Collection } from '../../typings'
 
-function NFTDropPage() {
+interface Props{
+  collection: Collection[]
+}
+
+function NFTDropPage({ collection }: Props) {
   // Auth
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
@@ -24,10 +31,12 @@ function NFTDropPage() {
           </div>
 
           <div className="space-y-2 p-5 text-center">
-            <h1 className="text-4xl font-bold text-white">SLAYFEST SAIYANS</h1>
+         
+            <h1 className="text-4xl font-bold text-white">{collection.nftCollectionName}</h1>
             <h2 className="text-xl text-gray-200">
-              SLAYFEST SAIYANS killing it using REACT!
+            {collection.description}
             </h2>
+          
           </div>
         </div>
       </div>
@@ -72,9 +81,9 @@ function NFTDropPage() {
           />
 
           <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold">
-            SLAYFEST SAIYANS | NFT Drop
+            {collection.title}
           </h1>
-
+          
           <p className="pt-2 text-xl text-green-400">13/21 NFT's claimed</p>
         </div>
 
@@ -87,6 +96,50 @@ function NFTDropPage() {
         </button>
       </div>
     </div>
+    
   )
 }
 export default NFTDropPage
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const query = `*[_type == "collection" && slug.current == $id][0]{
+    _id,
+    title,
+    address,
+    description,
+    nftCollectionName,
+    mainImage {
+    asset
+  },
+  previewImage {
+    asset
+  },
+  slug {
+    current
+  },
+  creator-> {
+    _id,
+    name,
+    address,
+    slug {
+    current
+  },
+  },
+  }`
+
+  const collection = await sanityClient.fetch(query, {
+    id: params?.id,
+  })
+
+  if (!collection) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {
+      collection,
+    }
+  }
+}
