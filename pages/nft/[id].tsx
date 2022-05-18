@@ -1,8 +1,9 @@
 import React from 'react'
 import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 import { GetServerSideProps } from 'next'
-import { sanityClient } from '../../sanity'
+import { sanityClient, urlFor } from '../../sanity'
 import { Collection } from '../../typings'
+import Link from 'next/link'
 
 interface Props{
   collection: Collection[]
@@ -44,6 +45,7 @@ function NFTDropPage({ collection }: Props) {
       <div className="flex flex-1 flex-col p-12 lg:col-span-7">
         {/* {Header} */}
         <header className="flex items-center justify-between">
+          <Link href={'/'}>
           <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
             The{' '}
             <span className="font-extrabold underline decoration-purple-600/50">
@@ -51,6 +53,7 @@ function NFTDropPage({ collection }: Props) {
             </span>{' '}
             NFT Market Place
           </h1>
+          </Link>
 
           <button
             onClick={() => (address ? disconnect() : connectWithMetaMask())}
@@ -76,7 +79,7 @@ function NFTDropPage({ collection }: Props) {
         >
           <img
             className="w-80 object-cover pb-10 lg:h-40 lg:animate-bounce"
-            src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/02/dbs-featured.jpg"
+            src={urlFor(collection.previewImage).url()}
             alt="ape nft"
           />
 
