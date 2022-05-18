@@ -49,7 +49,7 @@ function NFTDropPage({ collection }: Props) {
           <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
             The{' '}
             <span className="font-extrabold underline decoration-purple-600/50">
-              SLAYFEST
+              SLAYFEST SAIYANS
             </span>{' '}
             NFT Market Place
           </h1>

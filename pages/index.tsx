@@ -22,7 +22,7 @@ const Home = ({ collections }: Props) => {
       <h1 className="mb-10 text-4xl font-extralight">
         The{' '}
         <span className="font-extrabold underline decoration-purple-600/50">
-          SLAYFEST
+          SLAYFEST SAIYANS
         </span>{' '}
         NFT Market Place
       </h1>
