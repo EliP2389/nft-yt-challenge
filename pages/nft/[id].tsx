@@ -2,14 +2,14 @@ import React from 'react'
 import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 import { GetServerSideProps } from 'next'
 import { sanityClient, urlFor } from '../../sanity'
-import { Collection } from '../../typings'
 import Link from 'next/link'
+import { Collection } from '../../typings'
 
-interface Props{
-  collection: Collection[]
+interface Props {
+  collection: Collection
 }
 
-function NFTDropPage({ collection }: Props) {
+const NFTDropPage = ({ collection }: Props) => {
   // Auth
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
@@ -32,12 +32,10 @@ function NFTDropPage({ collection }: Props) {
           </div>
 
           <div className="space-y-2 p-5 text-center">
-         
-            <h1 className="text-4xl font-bold text-white">{collection.nftCollectionName}</h1>
-            <h2 className="text-xl text-gray-200">
-            {collection.description}
-            </h2>
-          
+            <h1 className="text-4xl font-bold text-white">
+              {collection.nftCollectionName}
+            </h1>
+            <h2 className="text-xl text-gray-200">{collection.description}</h2>
           </div>
         </div>
       </div>
@@ -46,13 +44,13 @@ function NFTDropPage({ collection }: Props) {
         {/* {Header} */}
         <header className="flex items-center justify-between">
           <Link href={'/'}>
-          <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
-            The{' '}
-            <span className="font-extrabold underline decoration-purple-600/50">
-              SLAYFEST SAIYANS
-            </span>{' '}
-            NFT Market Place
-          </h1>
+            <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
+              The{' '}
+              <span className="font-extrabold underline decoration-purple-600/50">
+                SLAYFEST SAIYANS
+              </span>{' '}
+              NFT Market Place
+            </h1>
           </Link>
 
           <button
@@ -86,7 +84,7 @@ function NFTDropPage({ collection }: Props) {
           <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold">
             {collection.title}
           </h1>
-          
+
           <p className="pt-2 text-xl text-green-400">13/21 NFT's claimed</p>
         </div>
 
@@ -99,7 +97,6 @@ function NFTDropPage({ collection }: Props) {
         </button>
       </div>
     </div>
-    
   )
 }
 export default NFTDropPage
@@ -143,6 +140,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     props: {
       collection,
-    }
+    },
   }
 }
