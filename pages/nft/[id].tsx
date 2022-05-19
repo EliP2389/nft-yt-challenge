@@ -9,13 +9,12 @@ interface Props {
   collection: Collection
 }
 
-const NFTDropPage = ({ collection }: Props) => {
+function NFTDropPage({ collection }: Props) {
   // Auth
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
   const disconnect = useDisconnect()
 
-  console.log(address)
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
       {/*left*/}
