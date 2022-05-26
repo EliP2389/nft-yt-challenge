@@ -1,5 +1,5 @@
-import React from 'react'
-import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
+import React, { useEffect, useState } from 'react'
+import { useAddress, useDisconnect, useMetamask, useNFTDrop } from '@thirdweb-dev/react'
 import { GetServerSideProps } from 'next'
 import { sanityClient, urlFor } from '../../sanity'
 import Link from 'next/link'
@@ -10,10 +10,18 @@ interface Props {
 }
 
 function NFTDropPage({ collection }: Props) {
+const [claimedSupply, setClaimedSupply] = useState<number>(0);
+const [totalSupply, setTotalSupply] = useState<number>(0);
+const nftDrop = useNFTDrop(collection.address)
+
   // Auth
   const connectWithMetaMask = useMetamask()
   const address = useAddress()
   const disconnect = useDisconnect()
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
